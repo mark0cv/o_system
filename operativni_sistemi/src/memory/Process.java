@@ -1,7 +1,6 @@
 package memory;
 
 import assembler.AsmHandler;
-import system.ProcessScheduler;
 //import system.ShellCommands;
 
 import java.util.ArrayList;
@@ -86,11 +85,18 @@ public class Process extends Thread {
     public String getFilePath() {
         return this.processName;
     }
+
+    public void setResultString(String resultString) {
+        this.resultString = resultString;
+    }
     public void setPartitionId(int partitionId) {
         this.partitionId = partitionId;
     }
     public String getResultString() {
         return resultString;
+    }
+    public int getPartitionId(){
+        return partitionId;
     }
 
 
@@ -100,6 +106,7 @@ public class Process extends Thread {
             AsmHandler asmHandler = new AsmHandler();
 
             DMAController.fromDiskToRam(this);
+            SCANDiskControl.loadProcessIntoRam(this);
 
             if (!hasEnoughRamSpace()) {
                 System.out.println("Nema dovoljno slobodnih particija u RAM-u za proces " + this.getProcessName());
@@ -112,6 +119,7 @@ public class Process extends Thread {
 
             if (this.save) {
                 DMAController.fromRamToDisk(this);
+                SCANDiskControl.saveProcessToDisk(this);
             }
 
         } catch (Exception e) {
