@@ -1,0 +1,48 @@
+/* Glavni okvir sa laganim gradijentom */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #ffffff, #f0f4f8); /* Beli u svetlo sivu */
+    -fx-padding: 40;
+    -fx-border-color: #dfe6e9;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+/* Stil za TextArea sa plavim nijansama */
+.text-area .content {
+    -fx-background-color: #dfe6e9; /* Svetlosiva pozadina */
+    -fx-fill: #2d3436; /* Tamno siv tekst */
+    -fx-font-size: 16px;
+    -fx-border-color: #74b9ff;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+/* Stil za sam tekst unutar TextArea */
+.text-area {
+    -fx-text-fill: #2d3436; /* Tamno siv tekst */
+    -fx-font-size: 16px;
+    -fx-background-color: #f0f4f8; /* Svetlosiva pozadina */
+    -fx-background-radius: 5px;
+}
+
+/* Stil za TextField sa plavom ivicom */
+.text-field {
+    -fx-background-color: #ffffff; /* Bela pozadina */
+    -fx-text-fill: #2d3436; /* Tamno siv tekst */
+    -fx-font-size: 16px;
+    -fx-border-color: #0984e3; /* Plava ivica */
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hover i fokus efekti za TextField i TextArea */
+.text-field:hover, .text-area:hover {
+    -fx-border-color: #74b9ff; /* Svetlo plava ivica */
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #0984e3; /* Tamnija plava ivica na fokus */
+}
