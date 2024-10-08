@@ -19,6 +19,8 @@ public class Process extends Thread {
     private ArrayList<String> instructions = new ArrayList<>();
     private int idProces;
     public String currentInstruction;
+    private int partitionId;
+    private String resultString;
 
 
     private long arrivalTime;
@@ -84,7 +86,12 @@ public class Process extends Thread {
     public String getFilePath() {
         return this.processName;
     }
-
+    public void setPartitionId(int partitionId) {
+        this.partitionId = partitionId;
+    }
+    public String getResultString() {
+        return resultString;
+    }
 
 
     @Override
